@@ -324,8 +324,7 @@ export function DashboardPage() {
       { label: 'Utilisateurs enregistrés', value: dashboardStats?.total_users ?? '-' },
       { label: 'Trajets aujourd\'hui', value: dashboardStats?.trips_today ?? '-' },
       { label: 'Durée moyenne d’un trajet', value: formatDuration(tripDurationStats.averageMinutes) },
-      { label: 'Temps moyen (Entreprise → Port)', value: formatDuration(summary.avgCompanyToPort) },
-      { label: 'Temps moyen au port', value: formatDuration(summary.avgPortDuration) },
+
       { label: 'Temps moyen (Port → Entreprise)', value: formatDuration(summary.avgPortToCompany) },
     ],
     [summary, truckTotals, tripDurationStats, dashboardStats],
@@ -816,8 +815,7 @@ export function DashboardPage() {
           <KpiCard label="Camions enregistrés" value={dashboardStats?.total_trucks ?? truckTotals.total} />
           <KpiCard label="Camions actifs / inactifs" value={dashboardStats ? `${dashboardStats.active_trucks} / ${dashboardStats.total_trucks - dashboardStats.active_trucks}` : `${truckTotals.active} / ${truckTotals.inactive}`} />
           <KpiCard label="Durée moyenne d’un trajet" value={formatDuration(tripDurationStats.averageMinutes)} />
-          <KpiCard label="Temps moyen (Entreprise → Port)" value={formatDuration(summary.avgCompanyToPort)} />
-          <KpiCard label="Temps moyen au port" value={formatDuration(summary.avgPortDuration)} />
+
           <KpiCard label="Temps moyen (Port → Entreprise)" value={formatDuration(summary.avgPortToCompany)} />
         </div>
       </section>
